@@ -93,7 +93,8 @@
             "http://resultservices-001-site1.btempurl.com/api/results/ShowResult?seating_no=";
           $.ajax({
             url: `${mainUrl}${$("#Seating_No").val()}`,
-            type: "GET",
+            type: "POST",
+            crossDomain: true,
           })
             .done(function (server_data) {
               $(".tbl").removeClass("d-none");
