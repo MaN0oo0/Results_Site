@@ -90,30 +90,26 @@
 
           $(".containerx").show(300);
           var mainUrl =
-            "http://resultservices-001-site1.btempurl.com/api/results/ShowResult?seating_no=";
+            "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
           $.ajax({
             url: `${mainUrl}${$("#Seating_No").val()}`,
             type: "POST",
-            crossDomain: true,
           })
-            .done(function (server_data) {
+            .done(function (server_data, status) {
               $(".tbl").removeClass("d-none");
               $(".containerx").hide(300);
               var row = ``;
               $.each(server_data, function (i, e) {
-                console.log(e);
                 row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td>${e.total_degree}</td><td>${e.student_case}</td><td>${e.student_case_desc}</td><td>${e.c_flage}</td></tr>`;
               });
               $("#data").append(row);
               $("#Seating_No").val("");
-              console.log("success" + server_data);
+              console.log("success");
             })
             .fail(function (jqXHR, status, err) {
-              console.log("fail" + err);
-              console.log("fail" + status);
-              $.each(jqXHR, function (i, e) {
-                console.log("fail " + e);
-              });
+              if (status == "400") {
+                alert("رقم الجلوس غير موجود");
+              }
             });
         });
       });
