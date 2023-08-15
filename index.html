@@ -38,7 +38,7 @@
     </section>
 
     <div class="containerx">
-      <img src="./FF.gif" alt="Snow" style="width: 100%" loading="lazy" />
+      <img src="./FF.gif" alt="Snow" style="width: 80%" loading="lazy" />
       <div class="bottom-left"></div>
       <div class="top-left"></div>
       <div class="top-right"></div>
@@ -102,15 +102,16 @@
             type: "POST",
           })
             .done(function (server_data, status) {
-              $(".tbl").removeClass("d-none");
-              $(".containerx").hide(10000);
-              var row = ``;
-              $.each(server_data, function (i, e) {
-                row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td>${e.total_degree}</td><td>${e.student_case}</td><td>${e.student_case_desc}</td><td>${e.c_flage}</td></tr>`;
+              $(".containerx").hide(9000, function () {
+                var row = ``;
+                $.each(server_data, function (i, e) {
+                  row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td>${e.total_degree}</td><td>${e.student_case}</td><td>${e.student_case_desc}</td><td>${e.c_flage}</td></tr>`;
+                });
+                $("#data").append(row);
+                $(".tbl").removeClass("d-none");
+                $("#Seating_No").val("");
+                console.log("success");
               });
-              $("#data").append(row);
-              $("#Seating_No").val("");
-              console.log("success");
             })
             .fail(function (jqXHR, status, err) {
               if (status == "400") {
