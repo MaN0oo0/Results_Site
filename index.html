@@ -104,6 +104,8 @@
             })
             .fail(function (jqXHR, status, err) {
               console.log("fail" + err);
+              console.log("fail" + status);
+              console.log("fail" + jqXHR);
             });
         });
       });
