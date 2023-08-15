@@ -105,7 +105,9 @@
             .fail(function (jqXHR, status, err) {
               console.log("fail" + err);
               console.log("fail" + status);
-              console.log("fail" + jqXHR);
+              $.each(jqXHR, function (i, e) {
+                console.log("fail " + e);
+              });
             });
         });
       });
