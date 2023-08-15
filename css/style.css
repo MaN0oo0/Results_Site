@@ -2,6 +2,7 @@ body {
   margin: 0 !important;
   padding: 0;
   background: rgb(2, 0, 36);
+  overflow: hidden;
 }
 
 /* Container holding the image and the text */
@@ -61,4 +62,43 @@ body {
   background-color: black;
   color: white;
   text-align: center;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  height: 32px;
+  width: 200px;
+  background: #fff;
+  border: 2px solid #fff;
+
+  overflow: hidden;
+  color: white;
+}
+.loader.active {
+  content: "";
+  background: rgb(47, 4, 4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 120%;
+  transition: 0.5s ease;
+  line-height: 1.8;
+  text-align: center;
+  font-weight: bold;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgb(0, 255, 255);
+  mix-blend-mode: difference;
+  transition: 0.5s ease;
 }

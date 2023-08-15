@@ -1,138 +1,57 @@
-$(function () {
-  fetch("../json/json_data.json")
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      $.each(json, function (i, e) {
-        Templte(e.Name, e.Quantity, e.Price, e.Color, e.Size);
-        getTotal();
+$(document).ready(function () {
+  //#region Get Result
+  $("#btnsub").click(function () {
+    if ($("#Seating_No").val() == "") {
+      alert("اكتب رقم الجلوس");
+      return;
+    }
+    $(".containerx").removeClass("d-none");
+    $(".tbl").addClass("d-none");
+    $("#data").html("");
+
+    var mainUrl =
+      "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
+    $.ajax({
+      url: `${mainUrl}${$("#Seating_No").val()}`,
+      type: "POST",
+    })
+      .done(function (server_data, status) {
+        $(".containerx").hide(500, function () {
+          $(".tbl").removeClass("d-none");
+          var row = ``;
+          $.each(server_data, function (i, e) {
+            row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td id="TotalDeg">${e.total_degree}</td><td>${e.student_case_desc}</td></tr>`;
+          });
+          $("#data").append(row);
+
+          $("#Seating_No").val("");
+          $(".loader").text("");
+          $(".func").addClass("d-flex");
+          console.log("success");
+        });
+      })
+      .fail(function (jqXHR, status, err) {
+        if (status == "400") {
+          alert("رقم الجلوس غير موجود");
+        }
       });
-    });
+  });
 
-  let conte = 0;
-  function Templte(Name, Quantity, Price, Color, Size) {
-    conte++;
-    var row = `
-    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0" id="Photo">
-    <div
-    class="bg-image hover-overlay hover-zoom ripple rounded"
-    data-mdb-ripple-color="light"
-  >
-    <img
-      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-      class="w-100"
-    />
-    <a href="#!">
-      <div
-        class="mask"
-        style="background-color: rgba(251, 251, 251, 0.2)"
-      ></div>
-    </a>
-  </div>
-    </div>
-    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0" id="infoData">
+  //#endregion
 
-        <p><strong>${Name}</strong></p>
-        <p>Color: ${Color}</p>
-        <p>Size: ${Size}</p>
-        <p>Quantity: ${Quantity}</p>
-       
-      <button
-      type="button"
-      class="btn btn-primary btn-sm me-1 mb-2"
-      data-mdb-toggle="tooltip"
-      title="Remove item"
-    >
-      <i class="fas fa-trash"></i>
-    </button>
-    <button
-      type="button"
-      class="btn btn-danger btn-sm mb-2"
-      data-mdb-toggle="tooltip"
-      title="Move to the wish list"
-    >
-      <i class="fas fa-heart"></i>
-    </button>
+  $("#calc").on("click", function () {
+    let TotalDeg = $("#TotalDeg").text();
+    console.log(TotalDeg);
+    if (!isNaN(+TotalDeg)) {
+      let Deg = +(TotalDeg / 410) * 100;
+      console.log(Math.round(Deg));
+      // $(":root").css("--content", Math.round(Deg) + "%");
 
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 inputNum">
-        <!-- Quantity -->
-        <div class="d-flex mb-4" style="max-width: 300px">
-          <button class="btn btn-primary down" onclick="down(${conte})">
-            <i class="fas fa-minus"></i>
-          </button>
-
-          <div class="form-outline">
-            <input
-              id="m-${conte}"
-              min="0"
-              name="quantity"
-              value="1"
-              type="number"
-              class="form-control"
-              data-append="${conte}"
-            />
-            
-          </div>
-
-          <button class="btn btn-primary Up" onclick="up(${conte})">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div>
-        <!-- Quantity -->
-
-        <!-- Price -->
-        
-        <p class="text-start text-md-center">
-        <strong class="priceContainer" id="P-${conte}"data-pric="${Price}">$${Price}</strong>
-      </p>
-        <!-- Price -->
-      </div>
-        `;
-
-    $("#ROW").append(row);
-  }
-  console.log($("#ROW"));
+      $(".loader.active").css({
+        content: Math.round(Deg) + "%",
+        width: Math.round(Deg) + "%",
+      });
+      $(".loader").text(`${Math.round(Deg)} %`);
+    }
+  });
 });
-
-function down(par) {
-  let countUp = document.getElementById(`m-${par}`);
-  countUp.stepDown();
-  let OldPrice = document.getElementById(`P-${par}`).getAttribute("data-pric");
-
-  console.log(countUp.value);
-  let newPrice = Number(OldPrice * parseInt(countUp.value));
-  console.log(newPrice);
-
-  if (parseInt(OldPrice) != 0) {
-    document.getElementById(`P-${par}`).innerHTML = `$${newPrice}`;
-  } else {
-    document.getElementById(`P-${par}`).innerHTML = `$0`;
-  }
-  getTotal();
-  console.log("down");
-}
-
-function up(par) {
-  let countUp = document.getElementById(`m-${par}`);
-  let OldPrice = document.getElementById(`P-${par}`).getAttribute("data-pric");
-  countUp.stepUp();
-  console.log(countUp.value);
-  let newPrice = Number(OldPrice * parseInt(countUp.value));
-  console.log(newPrice);
-  document.getElementById(`P-${par}`).innerHTML = `$${newPrice}`;
-  document.getElementById(`P-${par}`).setAttribute("data-pric", newPrice);
-  getTotal();
-  console.log("up");
-}
-
-function getTotal() {
-  var priceContainer = document.querySelectorAll(".priceContainer");
-  var total = 0;
-  for (let index = 0; index < priceContainer.length; index++) {
-    total += Number(priceContainer[index].getAttribute("data-pric"));
-  }
-  console.log(total);
-  document.getElementById("total").innerHTML = `$${total}`;
-}
