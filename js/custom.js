@@ -4,6 +4,7 @@ $(document).ready(function () {
   //#region Get Result
   $("#btnsub").click(function () {
     var seat = $("#Seating_No").val();
+
     if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
       alert("اكتب رقم الجلوس");
       $("#Seating_No").val("");
