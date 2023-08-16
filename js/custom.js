@@ -1,11 +1,13 @@
 $(document).ready(function () {
   //#region Get Result
   $("#btnsub").click(function () {
-    if ($("#Seating_No").val() == "") {
+    var seat = $("#Seating_No").val();
+    if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
       alert("اكتب رقم الجلوس");
+      $("#Seating_No").val("");
       return;
     }
-    $(".containerx").removeClass("d-none");
+
     $(".tbl").addClass("d-none");
     $("#data").html("");
 
@@ -16,6 +18,7 @@ $(document).ready(function () {
       type: "POST",
     })
       .done(function (server_data, status) {
+        $(".containerx").removeClass("d-none");
         $(".containerx").hide(500, function () {
           $(".tbl").removeClass("d-none");
           var row = ``;
@@ -31,8 +34,12 @@ $(document).ready(function () {
         });
       })
       .fail(function (jqXHR, status, err) {
-        if (status == "400") {
+        console.log(status);
+        console.log(err);
+        console.log(jqXHR.responseJSON["message"]);
+        if (jqXHR.responseJSON["code"] == "402") {
           alert("رقم الجلوس غير موجود");
+          $("#Seating_No").val("");
         }
       });
   });
