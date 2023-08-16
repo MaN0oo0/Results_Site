@@ -51,7 +51,7 @@ $(document).ready(function () {
         content: Math.round(Deg) + "%",
         width: Math.round(Deg) + "%",
       });
-      $(".loader").text(`${Math.round(Deg)} %`);
+      $(".loader").text(`${Deg} %`);
     }
   });
 });
