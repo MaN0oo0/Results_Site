@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  var date = new Date();
+  $(".time").text(`(${date.getFullYear()})`);
   //#region Get Result
   $("#btnsub").click(function () {
     var seat = $("#Seating_No").val();
