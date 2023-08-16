@@ -19,7 +19,7 @@ $(document).ready(function () {
     })
       .done(function (server_data, status) {
         $(".containerx").removeClass("d-none");
-        $(".containerx").hide(10000, function () {
+        $(".containerx").fadeOut("slow", function () {
           $(".tbl").removeClass("d-none");
           var row = ``;
           $.each(server_data, function (i, e) {
