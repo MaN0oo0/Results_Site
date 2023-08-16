@@ -19,7 +19,7 @@ $(document).ready(function () {
     })
       .done(function (server_data, status) {
         $(".containerx").removeClass("d-none");
-        $(".containerx").hide(500, function () {
+        $(".containerx").hide(10000, function () {
           $(".tbl").removeClass("d-none");
           var row = ``;
           $.each(server_data, function (i, e) {
