@@ -1,8 +1,28 @@
 $(document).ready(function () {
+  $("#Seating_No").focus();
+
   var date = new Date();
   $(".time").text(`(${date.getFullYear()})`);
+
+  //#region Body Event
+  $("body").on("keypress", (e) => {
+    if (e.key == "Enter") {
+      var seat = $("#Seating_No").val();
+      if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
+        alert("اكتب رقم الجلوس");
+        $("#Seating_No").val("");
+        return;
+      }
+
+      $(".tbl").addClass("d-none");
+      $("#data").html("");
+      TempFunc();
+    }
+  });
+  //#endregion
+
   //#region Get Result
-  $("#btnsub").click(function () {
+  $("#btnsub").click(function (e) {
     var seat = $("#Seating_No").val();
 
     if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
@@ -13,7 +33,13 @@ $(document).ready(function () {
 
     $(".tbl").addClass("d-none");
     $("#data").html("");
+    TempFunc();
+  });
 
+  //#endregion
+
+  //#region  TempFunc
+  var TempFunc = function () {
     var mainUrl =
       "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
     $.ajax({
@@ -22,19 +48,19 @@ $(document).ready(function () {
     })
       .done(function (server_data, status) {
         $(".containerx").removeClass("d-none");
-        $(".containerx").fadeOut("slow", function () {
-          $(".tbl").removeClass("d-none");
-          var row = ``;
-          $.each(server_data, function (i, e) {
-            row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td id="TotalDeg">${e.total_degree}</td><td>${e.student_case_desc}</td></tr>`;
-          });
-          $("#data").append(row);
+        $(".containerx").fadeOut("slow");
 
-          $("#Seating_No").val("");
-          $(".loader").text("");
-          $(".func").addClass("d-flex");
-          console.log("success");
+        $(".tbl").removeClass("d-none");
+        var row = ``;
+        $.each(server_data, function (i, e) {
+          row = `<tr><td>${e.seating_no}</td><td>${e.arabic_name}</td><td id="TotalDeg">${e.total_degree}</td><td>${e.student_case_desc}</td></tr>`;
         });
+        $("#data").html(row);
+
+        $("#Seating_No").val("");
+        $(".loader").text("");
+        $(".func").addClass("d-flex");
+        console.log("success");
       })
       .fail(function (jqXHR, status, err) {
         console.log(status);
@@ -45,10 +71,12 @@ $(document).ready(function () {
           $("#Seating_No").val("");
         }
       });
-  });
+    return this;
+  };
 
   //#endregion
 
+  //#region  Calc Persintag
   $("#calc").on("click", function () {
     let TotalDeg = $("#TotalDeg").text();
     console.log(TotalDeg);
@@ -64,4 +92,6 @@ $(document).ready(function () {
       $(".loader").text(`${Deg} %`);
     }
   });
+
+  //#endregion
 });
