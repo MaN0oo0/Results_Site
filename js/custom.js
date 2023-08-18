@@ -11,6 +11,7 @@ $(document).ready(function () {
       if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
         alert("اكتب رقم الجلوس");
         $("#Seating_No").val("");
+        $("#Seating_No").focus();
         return;
       }
 
@@ -28,6 +29,7 @@ $(document).ready(function () {
     if ($("#Seating_No").val() == "" || seat.length < 7 || seat.length > 7) {
       alert("اكتب رقم الجلوس");
       $("#Seating_No").val("");
+      $("#Seating_No").focus();
       return;
     }
 
