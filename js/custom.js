@@ -42,6 +42,7 @@ $(document).ready(function () {
 
   //#region  TempFunc
   var TempFunc = function () {
+    $(".containerx").removeClass("d-none");
     var mainUrl =
       "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
     $.ajax({
@@ -49,9 +50,6 @@ $(document).ready(function () {
       type: "POST",
     })
       .done(function (server_data, status) {
-        $(".containerx").removeClass("d-none");
-        $(".containerx").fadeOut("slow");
-
         $(".tbl").removeClass("d-none");
         var row = ``;
         $.each(server_data, function (i, e) {
@@ -63,6 +61,7 @@ $(document).ready(function () {
         $(".loader").text("");
         $(".func").addClass("d-flex");
         console.log("success");
+        $(".containerx").fadeOut(1000);
       })
       .fail(function (jqXHR, status, err) {
         console.log(status);
@@ -73,6 +72,7 @@ $(document).ready(function () {
           alert("رقم الجلوس غير موجود");
           $("#Seating_No").val("");
         }
+        $(".containerx").fadeOut(1000);
       });
     return this;
   };
