@@ -43,6 +43,7 @@ $(document).ready(function () {
   //#region  TempFunc
   var TempFunc = function () {
     $(".containerx").removeClass("d-none");
+    $(".containerx").fadeIn(10);
     var mainUrl =
       "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
     $.ajax({
