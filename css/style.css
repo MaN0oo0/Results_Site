@@ -3,6 +3,7 @@ body {
   padding: 0;
   background: rgb(2, 0, 36);
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* Container holding the image and the text */
@@ -140,5 +141,5 @@ marquee a {
 }
 .calc {
   width: 100%;
-  margin-bottom: 20px;
+  margin: 80px auto;
 }
