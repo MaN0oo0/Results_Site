@@ -63,6 +63,39 @@ body {
   color: white;
   text-align: center;
 }
+.marq {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  background-color: rgb(2, 0, 36);
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.marq marquee {
+  width: 80%;
+  height: 50px;
+  behavior: alternate;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+marquee a {
+  margin-left: 25px;
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  font-style: 20px;
+}
 
 .loader {
   display: block;
