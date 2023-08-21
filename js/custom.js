@@ -67,7 +67,8 @@ $(document).ready(function () {
       .fail(function (jqXHR, status, err) {
         console.log(status);
         console.log(err);
-        console.log(jqXHR.responseJSON["message"]);
+        // console.log(jqXHR.responseJSON["message"]);
+        alert("هناك خطأ");
         if (jqXHR.responseJSON["code"] == "402") {
           alert("رقم الجلوس غير موجود");
           $("#Seating_No").val("");
