@@ -20,7 +20,7 @@
         </h1>
       </div>
       <div class="row col-12 m-5">
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center cont">
           <div class="col-md-6 col-xl-6 col-sm-6">
             <input
               type="number"
@@ -30,8 +30,8 @@
               value=""
             />
           </div>
-          <div class="row col-md-5">
-            <div class="col-md-4 col-xl-4 col-sm-8">
+          <div class="row col-md-6">
+            <div class="col-md-4 col-xl-8 col-sm-12">
               <a class="btn btn-success text-white" id="btnsub">عرض النتيجة</a>
             </div>
           </div>
@@ -103,7 +103,7 @@
       <h4>
         <small> <span class="time"></span> ❤All rights reserved For</small>
         <a
-          href="https://voluble-semolina-c361db.netlify.app/"
+          href="https://mohamed-ahmed-profile.netlify.app/"
           class="text-decoration-none f"
           target="_blank"
         >
@@ -114,6 +114,10 @@
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script src="./js/bootstrap.js"></script>
-    <script src="./js/custom.js"></script>
+    <script>
+      $(function () {
+        $.getScript("/js/custom.js");
+      });
+    </script>
   </body>
 </html>
