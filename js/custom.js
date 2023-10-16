@@ -43,8 +43,8 @@ $("#btnsub").click(function (e) {
 var TempFunc = function () {
   $(".containerx").removeClass("d-none");
   $(".containerx").fadeIn(10);
-  var mainUrl =
-    "https://resultservices.bsite.net/api/results/ShowResult?seating_no=";
+  const mainUrl =
+    "https://resultservicesv2.bsite.net/api/results/ShowResult?seating_no=";
   $.ajax({
     url: `${mainUrl}${$("#Seating_No").val()}`,
     type: "POST",
