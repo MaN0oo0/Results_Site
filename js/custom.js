@@ -44,7 +44,7 @@ var TempFunc = function () {
   $(".containerx").removeClass("d-none");
   $(".containerx").fadeIn(10);
   const mainUrl =
-    "https://resultservicesv2.bsite.net/api/results/ShowResult?seating_no=";
+    "https://resultservicesv2.bsite.net/pub_file/api/results/ShowResult?seating_no=";
   $.ajax({
     url: `${mainUrl}${$("#Seating_No").val()}`,
     type: "POST",
