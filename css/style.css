@@ -64,7 +64,7 @@ body {
   color: white;
   text-align: center;
 }
-.marq {
+.ads-bottom {
   position: fixed;
   left: 0;
   bottom: 30px;
@@ -75,8 +75,6 @@ body {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-
-  flex-direction: column;
 }
 .marq marquee {
   width: 80%;
