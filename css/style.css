@@ -67,7 +67,7 @@ body {
 .marq {
   position: fixed;
   left: 0;
-  bottom: 30px;
+  bottom: 10px;
   width: 100%;
   background-color: rgb(2, 0, 36);
   color: white;
@@ -144,34 +144,3 @@ marquee a {
 }
 
 /* ss */
-
-.slider {
-  width: 100%;
-  margin: 50px auto;
-}
-
-.slick-slide {
-  margin: 0px 20px;
-}
-
-.slick-slide img {
-  width: 100%;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: black;
-}
-
-.slick-slide {
-  transition: all ease-in-out 0.3s;
-  opacity: 0.2;
-}
-
-.slick-active {
-  opacity: 0.5;
-}
-
-.slick-current {
-  opacity: 1;
-}
