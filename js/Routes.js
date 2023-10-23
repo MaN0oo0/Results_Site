@@ -5,9 +5,9 @@ let routes = $(".navbar-nav .nav-item .nav-link");
 $(routes).on("click", function (e) {
   let target = e.target.classList[1];
 
-  // if(e.target.classList[1]){
-
-  // }
+  if (!e.target.classList[1]) {
+    location.reload();
+  }
   switch (target) {
     case "thanwy":
       renderBody.load("../Components/thanwyComp.html", "", () => {
@@ -16,7 +16,9 @@ $(routes).on("click", function (e) {
       break;
 
     default:
-      renderBody.html("");
+      renderBody.load("../Components/coningSoon.html", "", () => {
+        $("#focs").focus();
+      });
       break;
   }
 });
