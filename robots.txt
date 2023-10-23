@@ -1,0 +1,5 @@
+
+User-agent: *
+Disallow: 
+Disallow: /
+Sitemap: https://natiga4thanwey.netlify.app/
