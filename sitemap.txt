@@ -1,5 +1,5 @@
 
 User-agent: Googlebot
-Allow: https://natiga4thanwey.netlify.app/sitemap.xml
+Allow: https://natiga4thanwey.netlify.app/sitemap.txt
 
-Sitemap: https://natiga4thanwey.netlify.app/sitemap.xml
+Sitemap: https://natiga4thanwey.netlify.app/sitemap.txt
