@@ -10,10 +10,13 @@ $(routes).on("click", function (e) {
   // }
   switch (target) {
     case "thanwy":
-      renderBody.load("../Components/thanwyComp.html");
+      renderBody.load("../Components/thanwyComp.html", "", () => {
+        $("#Seating_No").focus();
+      });
       break;
 
     default:
+      renderBody.html("");
       break;
   }
 });
