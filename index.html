@@ -90,16 +90,16 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link thanwy" href="#">نتيجة الثانوية</a>
+            <a class="nav-link thanwy quick" href="#">نتيجة الثانوية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link deplom" href="#">نتيجة الدبلومات</a>
+            <a class="nav-link deplom quick" href="#">نتيجة الدبلومات</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link aedady" href="#">نتيجة الاعدادية</a>
+            <a class="nav-link aedady quick" href="#">نتيجة الاعدادية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ebtedaey" href="#">نتيجة الابتدائية</a>
+            <a class="nav-link ebtedaey quick" href="#">نتيجة الابتدائية</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -112,7 +112,7 @@
               اخري
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">رابط1</a>
+              <a class="dropdown-item" href="#" id="ff">رابط1</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">رابط2</a>
               <!-- <a class="dropdown-item" href="#">Something else here</a> -->
@@ -136,161 +136,148 @@
       </div>
     </nav>
     <!--End  Navbar  -->
-
-    <!-- Start carousel -->
-    <div
-      id="demo"
-      class="carousel slide"
-      data-ride="carousel"
-      style="margin: 0% auto"
-    >
-      <!-- Indicators -->
-      <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-      </ul>
-
-      <!-- The slideshow -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <span class="t1"
-            >سوف تظهر النتيجة فور اعتمادها من الوزاره ترقبوا</span
-          >
-          <img
-            src="https://g12.emis.gov.eg/img/moe.jpg"
-            alt="Los Angeles"
-            width="1100"
-            height="500"
-          />
-        </div>
-        <div class="carousel-item">
-          <span>
-            موقع ,<em style="color: rgb(2, 0, 36)">نتيجة4ثانوية</em> يرحب بكم،
-            وتتمنى لأبنائها وبناتها طلاب وطالبات الشهادة الثانوية النجاح
-            والتوفيق
-          </span>
-          <img
-            src="https://g12.emis.gov.eg/img/slide/s2.jpg"
-            alt="Chicago"
-            width="1100"
-            height="500"
-          />
-        </div>
-        <div class="carousel-item">
-          <span
-            >أوائل الطلبة لعام 2023 م سيتم إعلانهم هنا فور إعتماد النتيجة</span
-          >
-          <img
-            src="https://g12.emis.gov.eg/img/slide/slide-3.jpg"
-            alt="New York"
-            width="1100"
-            height="500"
-          />
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
-    <!-- End carousel -->
-    <!-- start Loading -->
-    <div class="containerx d-none">
-      <img
-        src="./FF.gif"
-        alt="Snow"
-        style="width: 400px; height: 400px"
-        loading="lazy"
-      />
-      <div class="bottom-left"></div>
-      <div class="top-left"></div>
-      <div class="top-right"></div>
-      <div class="bottom-right"></div>
-      <div class="centered"></div>
-    </div>
-    <!-- End Loading -->
-
-    <!-- start RenderBody -->
-
-    <div class="" id="renderBody"></div>
-
-    <!-- End RenderBody -->
-
-    <div class="container col-sm-12 col-md-12 d-flex justify-content-center">
-      <table
-        class="table tbl d-none w-50 text-center table-striped table-bordered table-dark table-hover"
-      >
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">الاسم</th>
-            <th scope="col">مجموع الدرجات</th>
-            <th scope="col">حالة الطالب</th>
-          </tr>
-        </thead>
-        <tbody id="data"></tbody>
-      </table>
-    </div>
-    <div class="d-none w-100 func justify-content-center mt-4">
-      <div class="w-25 calc">
-        <button id="calc" class="btn btn-primary btn-sm">
-          احسب النسبه المئوية
-        </button>
-      </div>
-      <div class="w-50 position-relative">
-        <span class="loader active"></span>
-      </div>
-    </div>
-    <!--  -->
-    <div
-      class="px-4 pt-5 my-5 text-center border-bottom bg-white"
-      style="border-radius: 20px; margin: 40px auto"
-    >
-      <h1 class="display-4 fw-bold">نتيجة4ثانوية</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4" style="line-height: 1.8">
-          موقع نتيجة نتيجة4ثانوية الرسمي الموقع التعليمي الأول المتخصص في تقديم
-          خدمة الحصول علي نتيجة الشهادة الإعدادية 2023 بالإسم ورقم الجلوس في مصر
-          مجاناً خدمة عرض نتيجة الشهادة الاعدادية حسب ترتيب الطالب علي مستوي
-          المدرسة والإدارة والمحافظة والجمهورية ، اعرف نتيجتك في محافظتك فوراً
-          من خلال إشعارات الموقع التي تصل علي تليفونك إستقبال نتيجة الصف الثالث
-          الإعدادي 2023 بالإسم ورقم الجلوس فقط بالدرجات نتيجة جميع المواد
-          المضافة للمجموع والغير مضافة للمجموع ، أبحث عن موقع natiga4thanwey في
-          محرك بحث جوجل وأستعلم فوراً في جميع مراكز محافظات جمهورية مصر ، شارك
-          معنا نتيجة الثانوية العامة 2023 بالإسم ورقم الجلوس مع معرفة ترتيب
-          الطالب علي مستوي الجمهورية وتنسيق دخول الثانوية والكلية
-        </p>
+    <div class="b-example-divider"></div>
+    <div class="row" style="margin: 20px auto">
+      <div class="col-12 col-md-12 col-sm-12">
+        <!-- Start carousel -->
         <div
-          class="d-flex justify-content-center align-items-center w-100"
-          style="gap: 18px; flex-wrap: wrap; margin: 20px auto"
+          id="demo"
+          class="carousel slide d-flex justify-content-center"
+          data-ride="carousel"
+          style="margin: 0% auto"
         >
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">
-            نتيجة الشهادة الاعدادية
-          </button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-            نتيجة الثانوية العامة
-          </button>
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <span class="t1"
+                >سوف تظهر النتيجة فور اعتمادها من الوزاره ترقبوا</span
+              >
+              <img src="https://g12.emis.gov.eg/img/moe.jpg" />
+            </div>
+            <div class="carousel-item">
+              <span style="height: 30px; word-wrap: break-word">
+                موقع ,<em style="color: rgb(2, 0, 36)">نتيجة4ثانوية</em> يرحب
+                بكم
+              </span>
+              <img src="https://g12.emis.gov.eg/img/slide/s2.jpg" />
+            </div>
+            <div class="carousel-item">
+              <span
+                >أوائل الطلبة لعام 2023 م سيتم إعلانهم هنا فور إعتماد
+                النتيجة</span
+              >
+              <img src="https://g12.emis.gov.eg/img/slide/slide-3.jpg" />
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
         </div>
-      </div>
-      <div class="overflow-hidden" style="max-height: 30vh">
-        <div class="container px-5">
+        <!-- End carousel -->
+        <!-- start Loading -->
+        <div class="containerx d-none">
           <img
-            src="./favicon_io/favicon-32x32.png"
-            class="img-fluid border rounded-3 shadow-lg mb-4"
-            alt="Example image"
-            width="32"
-            height="32"
+            src="./FF.gif"
+            alt="Snow"
+            style="width: 400px; height: 400px"
             loading="lazy"
           />
+          <div class="bottom-left"></div>
+          <div class="top-left"></div>
+          <div class="top-right"></div>
+          <div class="bottom-right"></div>
+          <div class="centered"></div>
+        </div>
+        <!-- End Loading -->
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="col-12 col-sm-12 col-md-12">
+        <!-- start RenderBody -->
+
+        <div class="" id="renderBody"></div>
+
+        <!-- End RenderBody -->
+      </div>
+      <div class="b-example-divider"></div>
+      <div class="col-12 col-md-12 col-sm-12">
+        <!--  -->
+        <div
+          class="px-4 pt-5 my-5 text-center border-bottom bg-white"
+          style="border-radius: 20px; margin: 40px auto"
+        >
+          <h1 class="display-4 fw-bold">نتيجة4ثانوية</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4" style="line-height: 1.8">
+              موقع نتيجة نتيجة4ثانوية الرسمي الموقع التعليمي الأول المتخصص في
+              تقديم خدمة الحصول علي نتيجة الشهادة الإعدادية بالإسم ورقم الجلوس
+              في مصر مجاناً خدمة عرض نتيجة الشهادة الاعدادية حسب ترتيب الطالب
+              علي مستوي المدرسة والإدارة والمحافظة والجمهورية ، اعرف نتيجتك في
+              محافظتك فوراً من خلال إشعارات الموقع التي تصل علي تليفونك إستقبال
+              نتيجة الصف الثالث الإعدادي بالإسم ورقم الجلوس فقط بالدرجات نتيجة
+              جميع المواد المضافة للمجموع والغير مضافة للمجموع ، أبحث عن موقع
+              natiga4thanwey في محرك بحث جوجل وأستعلم فوراً في جميع مراكز
+              محافظات جمهورية مصر ، شارك معنا نتيجة الثانوية العامة بالإسم ورقم
+              الجلوس مع معرفة ترتيب الطالب علي مستوي الجمهورية وتنسيق دخول
+              الثانوية والكلية
+            </p>
+            <ins
+              class="adsbygoogle"
+              style="display: block"
+              data-ad-client="pub-2341078533559058"
+              data-ad-channel=""
+              data-ad-slot=""
+              data-ad-format="auto"
+            ></ins>
+            <div
+              class="d-flex justify-content-center align-items-center w-100"
+              style="gap: 18px; flex-wrap: wrap; margin: 20px auto"
+            >
+              <button
+                type="button"
+                class="btn aedady btn-primary btn-lg px-4 me-sm-3 quick"
+              >
+                نتيجة الشهادة الاعدادية
+              </button>
+              <button
+                type="button"
+                class="btn thanwy quick btn-outline-secondary btn-lg px-4"
+              >
+                نتيجة الثانوية العامة
+              </button>
+            </div>
+          </div>
+          <div class="overflow-hidden" style="max-height: 30vh">
+            <div class="container px-5">
+              <img
+                src="./favicon_io/favicon-32x32.png"
+                class="img-fluid border rounded-3 shadow-lg mb-4"
+                alt="Example image"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
+
+      <!--  -->
     </div>
-    <!--  -->
+    <div class="b-example-divider"></div>
+
+    <div class="b-example-divider"></div>
     <section class="marq" style="width: 100%; height: 30px"></section>
 
     <footer class="footer">
@@ -334,6 +321,7 @@
         signalGooglefcPresent();
       })();
     </script>
+
     <script src="./googleadsjs/ads.js"></script>
   </body>
 </html>

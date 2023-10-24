@@ -145,28 +145,29 @@ marquee a {
 /* ss */
 .carousel-inner img {
   width: 100%;
-  height: 100%;
+  height: 380px;
   position: relative;
 }
 .carousel-inner span {
-  width: 53%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 26%;
+  left: 15%;
   z-index: 14;
-  top: 32%;
+  top: 4%;
   background-color: #cccccc6b;
   border-radius: 7px;
   color: white;
   font-weight: 800;
-
+  font-size: 18;
   padding: 10px;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .t1 {
-  top: 42% !important;
+  top: 40% !important;
 }
 .navbar {
   border: 2px solid wheat;
@@ -178,4 +179,16 @@ marquee a {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-toggler-icon {
   color: wheat !important;
+}
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand {
+  font-size: 25px;
+}
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
 }

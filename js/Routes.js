@@ -1,10 +1,12 @@
 let renderBody = $("#renderBody");
 
-let routes = $(".navbar-nav .nav-item .nav-link");
+const routes = $(".quick");
+
+console.log(routes);
 
 $(routes).on("click", function (e) {
   let target = e.target.classList[1];
-
+  console.log(target);
   if (!e.target.classList[1]) {
     location.reload();
   }

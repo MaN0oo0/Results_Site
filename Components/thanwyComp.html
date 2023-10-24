@@ -30,4 +30,30 @@
     </div>
   </div>
 </section>
+
+<div class="container col-sm-12 col-md-12 d-flex justify-content-center">
+  <table
+    class="table tbl d-none w-50 text-center table-striped table-bordered table-dark table-hover"
+  >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">الاسم</th>
+        <th scope="col">مجموع الدرجات</th>
+        <th scope="col">حالة الطالب</th>
+      </tr>
+    </thead>
+    <tbody id="data"></tbody>
+  </table>
+</div>
+<div class="d-none w-100 func justify-content-center mt-4">
+  <div class="w-25 calc">
+    <button id="calc" class="btn btn-primary btn-sm">
+      احسب النسبه المئوية
+    </button>
+  </div>
+  <div class="w-50 position-relative">
+    <span class="loader active"></span>
+  </div>
+</div>
 <script src="../js/custom.js"></script>
