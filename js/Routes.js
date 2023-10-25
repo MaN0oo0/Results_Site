@@ -1,3 +1,5 @@
+$(".Tops").load("../Components/thanwyTops.html");
+
 let renderBody = $("#renderBody");
 
 const routes = $(".quick");
