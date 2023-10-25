@@ -4,8 +4,6 @@ let renderBody = $("#renderBody");
 
 const routes = $(".quick");
 
-console.log(routes);
-
 $(routes).on("click", function (e) {
   let target = e.target.classList[1];
   console.log(target);
