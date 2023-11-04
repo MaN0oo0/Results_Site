@@ -21,6 +21,9 @@ $(routes).on("click", function (e) {
       });
       break;
 
+    case "ebtedaey":
+    case "aedady":
+    case "deplom":
     default:
       $(".containerx").fadeOut(1000);
       renderBody.load("../Components/coningSoon.html", "", () => {
