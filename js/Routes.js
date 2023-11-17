@@ -14,21 +14,22 @@ $(routes).on("click", function (e) {
   }
   switch (target) {
     case "thanwy":
-      $(".containerx").fadeOut(1000);
-      $(renderBody).show(1100);
-      renderBody.load("../Components/thanwyComp.html", "", () => {
-        $("#btnsub").focus();
-      });
+      // $(".containerx").fadeOut(1000);
+      // $(renderBody).show(1100);
+      // renderBody.load("../Components/thanwyComp.html", "", () => {
+      //   $("#btnsub").focus();
+      // });
+      window.open("../Components/thanwyComp.html", "_self");
       break;
 
     case "ebtedaey":
     case "aedady":
     case "deplom":
-    default:
-      $(".containerx").fadeOut(1000);
-      renderBody.load("../Components/coningSoon.html", "", () => {
-        $("#focs").focus();
-      });
+      // $(".containerx").fadeOut(1000);
+      // renderBody.load("../Components/coningSoon.html", "", () => {
+      //   $("#focs").focus();
+      // });
+      window.open("../Components/coningSoon.html", "_self");
       break;
   }
 });
